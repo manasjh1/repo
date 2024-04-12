@@ -34,8 +34,8 @@ header {
   
   .navbar {
     display: flex;
-    padding: 0 10px;
-    max-width: 1800px;
+    padding: 0 10rem;
+    max-width: 1800rem;
     width: 100%;
     align-items: center;
     justify-content: space-between;
@@ -53,7 +53,7 @@ header {
   .navbar .all-links {
     display: flex;
     align-items: center;
-    margin-right: -420px; 
+    margin-right: -420rem; 
   }
   
   .navbar .all-links li {
@@ -63,12 +63,12 @@ header {
   
   .navbar .all-links a {
     color: #000000;
-    font-size: 20px;
+    font-size: 20rem;
   }
   
   .navbar .logo a img {
-    margin-left: -300px;
-    width: 500px;
+    margin-left: -300rem;
+    width: 500rem;
   }
   
 
@@ -467,3 +467,4 @@ section.about {
       margin: 4px;
   }
 }
+
