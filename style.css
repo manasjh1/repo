@@ -12,115 +12,136 @@ html {
 }
 
 body {
-  width: 100vw;
-  min-width: 100vw;
-  max-width: 100vw;
-
-  overflow-x: hidden;
-  overflow-y: auto;
   background: #f2f2f2;
 }
 
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    background: rgba(0, 0, 0, 0.001);
-  }
-  
-  .navbar {
-    display: flex;
-    padding: 0 10rem;
-    max-width: 1800rem;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .navbar input#menu-toggler {
-    display: none;
-  }
-  
-  .navbar #hamburger-btn {
-    cursor: pointer;
-    display: none;
-  }
-  
-  .navbar .all-links {
-    display: flex;
-    align-items: center;
-    margin-right: -420rem; 
-  }
-  
-  .navbar .all-links li {
-    position: relative;
-    list-style: none;
-  }
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.001);
+}
+
+.navbar {
+  display: flex;
+  padding: 0 10px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .all-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar .all-links li {
+  list-style: none;
+  margin-right: 15px; /* Added space between links */
+}
+
+.navbar .all-links li:last-child {
+  margin-right: 0; /* No margin for the last item */
+}
+
+.navbar .all-links a {
+  color: #000000;
+  font-size: 1.25rem; /* Original font size */
+  transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.navbar .all-links a:hover {
+  color: #ddd; /* Hover effect for links */
+}
+
+.navbar .logo a img {
+  width: auto;
+  max-width: 100%;
+}
+
+header a, footer a {
+  text-decoration: none;
+  color: #fff;
+  padding: 20px 0;
+  display: inline-block;
+}
+
+header a:hover, footer a:hover {
+  color: #ddd;
+}
+
+@media only screen and (max-width: 1200px) {
   .navbar .all-links a {
-    color: #000000;
-    font-size: 20rem;
+    font-size: 0.5rem; /* Slightly reduced font size */
   }
-  
+
   .navbar .logo a img {
-    margin-left: -300rem;
-    width: 500rem;
+    max-width: 40%; 
   }
-  
+}
 
-  header a, footer a {
-    margin-left: 50px;
-    text-decoration: none;
-    color: #fff;
-    height: 100%;
-    padding: 20px 0;
-    display: inline-block;
-  }
-  
-  header a:hover, footer a:hover {
-    color: #ddd;
+@media only screen and (max-width: 768px) {
+  .navbar .all-links {
+    margin-right: 0;
+    font-size: 0.2rem;
   }
 
-  @keyframes slideBackground {
-    0%, 19.999% {
-      background-image: url("BG 1.jpg");
-    }
-    20%, 39.999% {
-      background-image: url("BG 2.webp");
-    }
-    40%, 59.999% {
-      background-image: url("BG 3.jpeg");
-    }
-    60%, 79.999% {
-      background-image: url("BG 4.jpg");
-    }
-    80%, 99.999% {
-      background-image: url("BG 5.jpg");
-    }
-    100% {
-      background-image: url("BG 6.jpg");
-    }
+  .navbar .logo a img {
+    max-width: 50%; /* Increased size of the logo */
   }
-  
-  .homepage {
-      height: 100vh;
-      width: 100%;
-      position: relative;
-      background: url("BG 4.jpg");
-      background-position: center 65%;
-      background-size: cover;
-      background-attachment: fixed;
-      background-size: cover;
-      background-attachment: fixed;
-      animation: slideBackground 10s steps(5) infinite;
+}
+
+@media only screen and (max-width: 480px) {
+  .navbar .all-links a {
+    font-size: 0.4rem; /* Reduced font size for menu links */
   }
-  
+
+  .navbar .logo a img {
+    max-width: 70%; /* Further increased size of the logo */
+  }
+}
+
+
+
+@keyframes slideBackground {
+  0%, 19.999% {
+    background-image: url("BG 1.jpg");
+  }
+  20%, 39.999% {
+    background-image: url("BG 2.webp");
+  }
+  40%, 59.999% {
+    background-image: url("BG 3.jpeg");
+  }
+  60%, 79.999% {
+    background-image: url("BG 4.jpg");
+  }
+  80%, 99.999% {
+    background-image: url("BG 5.jpg");
+  }
+  100% {
+    background-image: url("BG 6.jpg");
+  }
+}
+
+.homepage {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  background: url("BG 4.jpg");
+  background-position: center 65%;
+  background-size: cover;
+  background-attachment: fixed;
+  animation: slideBackground 10s steps(5) infinite;
+}
+
 .homepage::before {
- content: "";
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
@@ -152,13 +173,48 @@ header {
   text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 
+/* Responsive styles */
+@media (min-width: 1200px) {
+  .homepage .content h1 {
+    font-size: 60px;
+  }
+  .homepage .content .text {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .homepage .content h1 {
+    font-size: 50px;
+  }
+  .homepage .content .text {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 767px) {
+  .homepage {
+    background-attachment: scroll;
+  }
+  .homepage .content {
+    height: auto;
+    padding: 20px;
+  }
+  .homepage .content h1 {
+    font-size: 40px;
+  }
+  .homepage .content .text {
+    font-size: 16px;
+  }
+}
+
 .content a {
   color: #fdfbfb;
   display: block;
   text-transform: uppercase;
-  font-size: 28px;
-  margin: 0 50px;
-  padding: 30px 50px;
+  font-size: 1.75rem;
+  margin: 0 3.125%; /* Use percentage for responsive margins */
+  padding: 1.875rem 3.125%; /* Use rem for scalable padding */
   border-radius: 5px;
   background: rgba(0, 0, 0, 0.05);
   border: 2px solid #f0f7f1;
@@ -172,15 +228,32 @@ header {
   background: rgba(226, 9, 9, 0.3);
 }
 
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .content a {
+    font-size: 1.5rem; /* Smaller font size for small screens */
+    padding: 1.5rem 2.5%; /* Smaller padding for small screens */
+    margin: 0 2.5%; /* Smaller margin for small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .content a {
+    font-size: 1.25rem; /* Even smaller font size for very small screens */
+    padding: 1.25rem 2%; /* Even smaller padding for very small screens */
+    margin: 0 2%; /* Even smaller margin for very small screens */
+  }
+}
+
 section {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 100px 0 0;
+  padding: 6.25rem 0 0; /* Use rem for scalable padding */
 }
 
 section h2 {
-  font-size: 3rem;
+  font-size: 3rem; /* Consider using rem if needed */
 }
 
 section > p {
@@ -190,127 +263,204 @@ section > p {
 section .cards {
   display: flex;
   flex-wrap: wrap;
-  max-width: 1600px;
-  margin-top: 160px;
-  padding: 0 100px;
+  max-width: 100rem; /* Use rem for scalable max-width */
+  margin-top: 10rem; /* Use rem for scalable margin */
+  padding: 0 6.25rem; /* Use rem for scalable padding */
   justify-content: space-between;
 }
 
 section.about {
   margin: 0 auto;
-  max-width: 8000px;
+  max-width: 500rem; /* Adjusted max-width, 8000px seems too large */
 }
 
 .about .company-info {
-  margin-top: 30px;
+  margin-top: 1.875rem; /* Use rem for scalable margin */
 }
 
 .about-us-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 300px;
+  padding: 18.75rem; /* Use rem for scalable padding */
 }
 
 .about-us-image img {
-  width: 700px; 
+  max-width: 43.75rem; /* Use rem for scalable max-width */
   height: auto;
-  margin-right: 30px;
+  margin-right: 1.875rem; /* Use rem for scalable margin */
 }
 
 .about-us-text {
   text-align: center;
-  max-width: 3600px; 
+  max-width: 225rem; /* Adjusted max-width, 3600px seems too large */
 }
-.about-us-text.h1 {
-  text-align: center;
-  color: #6b4e16;
-  height: 80px;
-  width: 50px;
-  margin-bottom: 30px;
-}
-.about-us-text h2 {
-  text-align: center;
-  height: 25px;
-  font-weight: 20px;
-  margin: 30px 0 10px;
-}
-.about-us-text h3 {
-  text-align: center;
-  height: 15px;
-  font-weight: 20px;
-  margin: 30px 0 10px;
-}
+
+.about-us-text h1, /* Corrected selector */
+.about-us-text h2,
+.about-us-text h3,
 .about-us-text p {
   text-align: center;
-  height: 15px;
-  font-weight: 20px;
-  margin: 30px 0 10px;
+  margin: 1.875rem 0 0.625rem; /* Use rem for scalable margin */
 }
 
-.about .team {
-  text-align: left;
-  width: 100%;
+/* Responsive styles */
+@media (max-width: 1200px) {
+  section {
+    padding: 5rem 0 0; /* Smaller padding for smaller screens */
+  }
+
+  section .cards {
+    padding: 0 5rem; /* Smaller padding for smaller screens */
+  }
+
+  .about-us-container {
+    padding: 15rem; /* Smaller padding for smaller screens */
+  }
+
+  .about-us-image img {
+    max-width: 35rem; /* Smaller max-width for smaller screens */
+  }
 }
 
-.about .team ul {
-  padding-left: 20px;
+@media (max-width: 768px) {
+  section h2 {
+    font-size: 2.5rem; /* Smaller font size for small screens */
+  }
+
+  section .cards {
+    margin-top: 8rem; /* Smaller margin for small screens */
+    padding: 0 4rem; /* Smaller padding for small screens */
+  }
+
+  .about-us-container {
+    padding: 10rem; /* Smaller padding for small screens */
+  }
+
+  .about-us-image img {
+    max-width: 30rem; /* Smaller max-width for small screens */
+  }
 }
-.about .row {
-  padding: 0 10px;
+
+@media (max-width: 480px) {
+  section {
+    padding: 3rem 0 0; /* Even smaller padding for very small screens */
+  }
+
+  section .cards {
+    padding: 0 2rem; /* Even smaller padding for very small screens */
+  }
+
+  .about-us-container {
+    padding: 5rem; /* Even smaller padding for very small screens */
+    flex-direction: column; /* Stack elements for very small screens */
+  }
+
+  .about-us-image img {
+    max-width: 100%; /* Full width for very small screens */
+    margin-right: 0; /* Remove margin for very small screens */
+  }
+
+  .about-us-text {
+    max-width: 100%; /* Full width for very small screens */
+  }
 }
+
+/* Ensure the .about-us-text h1 selector is corrected as shown above */
+
 .registration {
   text-align: center;
-  padding: 20px;
+  padding: 1.25rem; /* Use rem for scalable padding */
 }
 
 .registration .center-text {
-  margin-bottom: 20px;
-  font-size: 45px;
+  margin-bottom: 1.25rem; /* Use rem for scalable margin */
+  font-size: 2.8125rem; /* Use rem for scalable font size */
 }
 
 .registration .content {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column; /* Stack elements on small screens */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
 }
 
 .registration .text-section {
-  width: 700px;
-  margin-left: 600px;
-  font-size: 25px;
+  width: 100%; /* Full width on small screens */
+  margin: 0; /* Reset margin on small screens */
+  font-size: 1.5625rem; /* Use rem for scalable font size */
+  padding: 0 1.25rem; /* Add padding on small screens */
 }
 
 .registration .button {
   display: inline-block;
-  padding: 10px 60px;
-  margin-top: 10px;
-  
+  padding: 0.625rem 3.75rem; /* Use rem for scalable padding */
+  margin-top: 0.625rem; /* Use rem for scalable margin */
   background-color: #007bff;
   color: white;
   text-decoration: none;
   border-radius: 5px;
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.registration .button:hover {
+  background-color: #0056b3; /* Darker shade on hover for better interaction */
 }
 
 .registration .image-section {
-  width: 50%;
-  margin-right: 120px;
+  width: 100%; /* Full width on small screens */
+  margin: 0; /* Reset margin on small screens */
 }
 
 .registration .image-section img {
-  max-width: 50%;
+  max-width: 100%; /* Full width on small screens */
   height: auto;
   border-radius: 45px;
 }
 
+/* Responsive styles for larger screens */
+@media (min-width: 768px) {
+  .registration .content {
+    flex-direction: row; /* Side-by-side layout on larger screens */
+    justify-content: space-between; /* Space out elements on larger screens */
+  }
+
+  .registration .text-section {
+    width: 43.75rem; /* Use rem for scalable width */
+    margin-left: 37.5rem; /* Use rem for scalable margin */
+  }
+
+  .registration .image-section {
+    width: 50%; /* Half width on larger screens */
+    margin-right: 7.5rem; /* Use rem for scalable margin */
+  }
+
+  .registration .image-section img {
+    max-width: 50%; /* Half width on larger screens */
+  }
+}
+
+@media (min-width: 1200px) {
+  .registration .text-section {
+    width: 43.75rem; /* Use rem for scalable width */
+    margin-left: 0; /* Centered layout on very large screens */
+  }
+
+  .registration .image-section {
+    margin-right: 0; /* Centered layout on very large screens */
+  }
+}
+
 .tables-container {
   display: flex;
+  flex-wrap: wrap; /* Allow tables to wrap on smaller screens */
   justify-content: space-between;
 }
 
 .table-wrapper {
-  flex: 1;
+  flex: 1 1 auto; /* Allow the wrapper to grow and shrink */
   padding: 10px;
+  box-sizing: border-box; /* Include padding in the element's total width */
 }
 
 .custom-table {
@@ -323,25 +473,18 @@ section.about {
   border: 1px solid #050802;
   padding: 15px;
   text-align: left;
-  width: 230px;
-  height: 80px;  
+  box-sizing: border-box; /* Include padding in the element's total width */
 }
 
-#table1 th {
-  background-color: #4d90dd;  
-}
-#table2 th {
-  background-color: #4d90dd;  
-}
-
-#table3 th {
-  background-color: #4d90dd; 
-}
-
+/* Responsive table headers */
+#table1 th,
+#table2 th,
+#table3 th,
 #table4 th {
-  background-color: #4d90dd; 
+  background-color: #4d90dd;
 }
 
+/* Zebra striping for table rows */
 .custom-table tbody tr:nth-of-type(even) {
   background-color: #94d3f0;
 }
@@ -350,38 +493,88 @@ section.about {
   background-color: #e9ecef;
 }
 
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .custom-table,
+  .custom-table th,
+  .custom-table td {
+    width: auto; /* Auto width for smaller screens */
+    height: auto; /* Auto height for smaller screens */
+    display: block; /* Block display for stacking cells */
+  }
+
+  .custom-table th,
+  .custom-table td {
+    padding: 10px; /* Smaller padding for smaller screens */
+  }
+
+  .custom-table th {
+    background-color: #4d90dd;
+    text-align: center; /* Center align for smaller screens */
+  }
+
+  .custom-table td {
+    border-top: none; /* Remove top border for a cleaner look */
+  }
+
+  .custom-table tbody tr {
+    margin-bottom: 10px; /* Space out the rows */
+  }
+}
+
+
 .event {
   text-align: center;
 }
+
 .event-header {
-  margin-bottom: 20px;
-  font-size: 30px;
+  margin-bottom: 1.25rem; /* Use rem for scalable margin */
+  font-size: 1.875rem; /* Use rem for scalable font size */
 }
+
 .event-box {
-  display: inline-block;
+  display: block; /* Default to block for mobile */
   position: relative;
-  margin: 20px;
+  margin: 1.25rem; /* Use rem for scalable margin */
+  width: 100%; /* Full width on mobile */
 }
+
 .event-box img {
-  width: 450px;
-  height: 500px;
+  width: 95%; /* Full width to be responsive */
+  height: auto; /* Maintain aspect ratio */
 }
+
 .event-box .overlay {
   position: absolute;
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
   color: white;
   width: 100%;
-  transition: .5s ease;
-  opacity:0;
-  color: white;
-  font-size: 30px;
-  padding: 20px;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+  font-size: 1.875rem; /* Use rem for scalable font size */
+  padding: 1.25rem; /* Use rem for scalable padding */
   text-align: center;
 }
+
 .event-box:hover .overlay {
   opacity: 1;
 }
+
+/* Responsive styles for larger screens */
+@media (min-width: 768px) {
+  .event-box {
+    display: inline-block; /* Side-by-side layout on larger screens */
+    width: auto; /* Auto width to fit content */
+    margin: 1.25rem; /* Consistent margin */
+  }
+
+  .event-box img {
+    width: 28.125rem; /* Fixed width for larger screens */
+    height: 31.25rem; /* Fixed height for larger screens */
+  }
+}
+
 
 .footer{
   padding: 0;
@@ -467,4 +660,3 @@ section.about {
       margin: 4px;
   }
 }
-
